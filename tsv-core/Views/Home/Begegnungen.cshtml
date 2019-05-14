@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Begegnungen";
+}
+
+    <article class="text-center">
+        <script type='text/javascript'>
+            (function () {
+                var useSSL = 'https:' === document.location.protocol;
+                var src = (useSSL ? 'https:' : 'http:') + '//www.bfv.de/widget/widgetresource/widgetjs';
+                document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+            })();
+        </script>
+        <div id="bfv1534926416872">Laden...</div>
+        <script>
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+            if (width < 768) {
+                BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNJVO000017VV0AG08LVUPGND5I", "bfv1534926416872",
+                {
+                    height: "2000", width: "300", selectedTab: BFVWidget.HTML5.vereinTabs.spiele,
+                    colorResults: "rgb(14,14,0)", colorNav: "rgb(17,17,1)", colorClubName: "rgb(13,13,0)", backgroundNav: "rgb(241,241,6)"
+                });
+
+            }
+            else {
+                BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNJVO000017VV0AG08LVUPGND5I", "bfv1534926416872",
+                            {
+                                height: "2000", width: "800", selectedTab: BFVWidget.HTML5.vereinTabs.spiele,
+                                colorResults: "rgb(14,14,0)", colorNav: "rgb(17,17,1)", colorClubName: "rgb(13,13,0)", backgroundNav: "rgb(241,241,6)"
+                            });
+            }
+        </script>
+    </article>

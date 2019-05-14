@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+    @Html.Partial("headPartialView")
+<body id="bodyAllButIndex">
+    
+    @Html.Partial("headerPartialView")
+
+    <main id="mainAllButIndex" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
+
+            <div class="col-md-1"></div>
+
+            <div class="col-md-3">
+                @await Component.InvokeAsync("AdCarousel")
+            </div>
+        </div>
+    </main>
+    
+    @Html.Partial("footerPartialView")
+    
+</body>
+</html>

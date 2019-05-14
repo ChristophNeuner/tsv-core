@@ -1,0 +1,71 @@
+﻿@model LogViewModel
+@{
+    ViewData["Title"] = "Request Logging";
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post" asp-action="RequestLogging">
+    <div class="container">
+        <div class='col-md-5'>
+            <div class="form-group">
+                <div class='input-group date'>
+                    <label asp-for="FromDate">vom</label>
+                    <input type="date" asp-for="FromDate" class="form-control" value=""/>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-5'>
+            <div class="form-group">
+                <div class='input-group date'>
+                    <label asp-for="UntilDate">bis zum</label>
+                    <input type="date" asp-for="UntilDate" class="form-control" value=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Auf Zeitraum begrenzen</button>
+</form>
+
+<hr />
+<p>
+    Die Tabelle zeigt beim ersten Aufruf die Zugriffe der letzten 7 Tage an. Um den Zeitraum genauer einzugrenzen,
+    die zwei Zeilen oben verwenden und "Auf Zeitraum begrenzen" Button anklicken
+</p>
+<hr />
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed logging-table">
+            <thead>
+                <tr><th class="log-uri">Pfad</th><th class="log-count">Aufrufe</th></tr>
+            </thead>
+            <tbody>
+                @if (Model.DistinctRequestPathsWithCount != null)
+                {
+                    @foreach (var r in Model.DistinctRequestPathsWithCount)
+                    {
+                        <tr><td class="log-uri">@r?.Path</td><td class="log-count">@r?.Count</td></tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr><th>request time</th><th>requested path</th><th>client ip-address</th><th>User-Agent</th></tr>
+            </thead>
+            <tbody>
+                @if (Model.Requests != null)
+                {
+                    @foreach (Request request in Model.Requests)
+                    {
+                        <tr><td>@request?.Time</td><td>@request?.Path.ToString()</td><td>@request?.IPAddressClient</td><td>@request?.UserAgent</td></tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

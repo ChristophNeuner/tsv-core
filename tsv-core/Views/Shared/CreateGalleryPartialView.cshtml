@@ -1,0 +1,31 @@
+﻿@if (User?.Identity?.IsAuthenticated ?? false)
+{
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <form asp-action="CreateGallery" asp-controller="UserArea" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label id="folderNameInput"name="folderName">Name der Gallerie</label>
+            <input name="folderName" class="form-control" />
+        </div>
+        <input type="file" name="files" multiple />
+        <input type="submit" value="Gallerie speichern" />
+    </form>
+    <p>@ViewBag.Message</p>
+    @*<hr />
+    <div id="dropzone">
+        Drag your images here.
+    </div>
+    <button id="btnGalErst">Gedroppte Bilder speichern</button>
+    <div id="imgBox"></div>*@
+    <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.min.js" 
+            integrity="sha256-n/D7zniNBJh3vlIKuu4H3HQpL2HBY8RGYlzdXwPGlqM=" 
+            crossorigin="anonymous">
+
+    </script>
+    <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/addons/p5.dom.min.js" 
+            integrity="sha256-oKUYpt7MxqgMrMXuZDm9MmjuSHNfQkxWjb3paVhHfTA=" 
+            crossorigin="anonymous">
+    </script>
+    @*<script asp-src-include="~/js/dragDrop.js"></script>*@
+}

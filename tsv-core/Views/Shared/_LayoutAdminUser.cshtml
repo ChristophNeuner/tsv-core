@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+@Html.Partial("headPartialView")
+<body id="bodyAllButIndex">
+
+    @Html.Partial("headerPartialView")
+
+    <main id="mainAllButIndex" class="container">
+          @RenderBody()
+    </main>
+
+    @Html.Partial("footerPartialView")
+
+</body>
+</html>

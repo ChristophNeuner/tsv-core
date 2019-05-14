@@ -1,0 +1,89 @@
+﻿<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" title="Home" asp-controller="Home" asp-action="Index">
+                    <img alt="Brand" src="~/images/vereinsemblem/vereinsemblem_ausgeschnitten/vereinsemblem_16x18.png" />
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Der TSV Ebensfeld <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/pdfs/aufnahmeantrag.pdf" download="Aufnahmeantrag.pdf">Aufnahmeantrag</a></li>
+                            <li><a asp-controller="Home" asp-action="Vereinschronik">Vereinschronik</a></li>
+                            <li><a asp-controller="Home" asp-action="Vorstandschaft">Vorstandschaft</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Abteilungen <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-controller="Home" asp-action="Damengymnastik">Damengymnastik</a></li>
+                            <li class="dropdown-submenu">
+                                <a>Fußball</a>
+                                <ul class="dropdown-menu">
+                                    <li><a asp-controller="Home" asp-action="Fußball_allgemein">Allgemeines</a></li>
+                                    <li><a asp-controller="Home" asp-action="Begegnungen">Spieltermine/Ergebnisse</a></li>
+                                    <li><a asp-controller="Home" asp-action="Mannschaft1">1. Mannschaft</a></li>
+                                    <li><a asp-controller="Home" asp-action="Mannschaft2">2. Mannschaft</a></li>
+                                    <li><a asp-controller="Home" asp-action="Damenmannschaft">Damenmannschaft</a></li>
+                                    <li><a asp-controller="Home" asp-action="A_Jugend">A-Jugend</a></li>
+                                    <li><a asp-controller="Home" asp-action="B_Jugend">B-Jugend</a></li>
+                                    <li><a asp-controller="Home" asp-action="C_Jugend">C-Jugend</a></li>
+                                    <li><a asp-controller="Home" asp-action="D_Jugend">D-Jugend</a></li>
+                                    <li><a asp-controller="Home" asp-action="E_Jugend">E-Jugend</a></li>
+                                    <li><a asp-controller="Home" asp-action="F_Jugend">F-Jugend</a></li>
+                                    <li><a asp-controller="Home" asp-action="G_Jugend">G-Jugend</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-controller="Home" asp-action="Leichtathletik">Leichtathletik</a></li>
+                            <li><a asp-controller="Home" asp-action="Kinder_Turnen">Mutter-Vater-Kind-Turnen</a></li>
+                            <li><a asp-controller="Home" asp-action="Tennis">Tennis</a></li>
+                            <li><a asp-controller="Home" asp-action="Volleyball">Volleyball</a></li>
+                        </ul>
+                    </li>
+                    <li><a asp-controller="Home" asp-action="Routenplaner">Anfahrt</a></li>
+                    <li><a asp-controller="Home" asp-action="Vereinsshop">Vereinsshop</a></li>
+                    <li><a asp-controller="Home" asp-action="Gallerien">Gallerien</a></li>
+                    <li><a asp-controller="Home" asp-action="Kontakt">Kontakt</a></li>
+                    @if (!User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                    }
+                    
+                    @if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrationsbereich<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-controller="Admin" asp-action="Accounts">Userverwaltung</a></li>
+                                <li><a asp-controller="RoleAdmin" asp-action="Index">Rollenverwaltung</a></li>
+                                <li><a asp-controller="Admin" asp-action="RequestLogging">Zugriffslog</a></li>
+                            </ul>
+                        </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Userbereich<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a asp-controller="UserArea" asp-action="Index">Start</a></li>
+                                        <li><a asp-controller="UserArea" asp-action="CreateGallery">Gallerie Erstellen</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Logout</a></li>
+                    }
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+

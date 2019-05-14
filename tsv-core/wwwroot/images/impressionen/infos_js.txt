@@ -1,0 +1,3 @@
+Es werden lt. Script impressionen.js 12 Bilder angezeigt. 
+Die im Script unter imgAdr  eingetragene Anzahl muss um eines kleiner sein als tatsächlich Bilder vorhanden sind. (Hier als 11)
+Diese müssen zwingend von  bild01.jpg, bild02.jpg,..... benannt sein.

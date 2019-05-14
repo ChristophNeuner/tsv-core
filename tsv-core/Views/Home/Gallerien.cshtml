@@ -1,0 +1,78 @@
+﻿@model List<DirectoryInfo>
+@{
+    ViewData["Title"] = "Gallerien";
+}
+
+@Html.Partial("CreateGalleryPartialView")
+
+@if (!ViewBag.Post)
+{
+    @foreach (DirectoryInfo di in Model)
+    {
+        <div class="galleryPreviewImageContainer">
+            <form name="galleryForm" asp-action="Gallerien" method="post" asp-route-galleryName="@di?.Name">
+                <button type="submit" class="galleryPreviewImageContainer">
+                    @if (di != null && di.GetFiles().Length >= 1)
+                    {
+                        @di?.Name
+                        <br />
+                        <img class="galleryPreviewImage1 galleryPreviewImages" src="~/images/gallerien/@di.Name/@di.GetFiles()?.First()?.Name" />
+                        @if (@di.GetFiles().Length >= 2)
+                        {
+                            <img class="galleryPreviewImage2 galleryPreviewImages" src="~/images/gallerien/@di.Name/@di.GetFiles()?.Skip(1)?.First()?.Name" />
+                        }
+                        @if (@di.GetFiles().Length >= 3)
+                        {
+                            <img class="galleryPreviewImage3 galleryPreviewImages" src="~/images/gallerien/@di.Name/@di.GetFiles()?.Skip(2)?.First()?.Name" />
+                        }
+                    }
+                </button>
+            </form>
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <form asp-action="DeleteGallery" asp-controller="UserArea" method="post" asp-route-folderName="@di.Name">
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            }
+        </div>
+    }
+}
+
+@if (ViewBag.Post)
+{
+    <h3 class="text-center">@Model?.First()?.Name</h3>
+
+    <div id="GalleryCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            @foreach (DirectoryInfo di in Model)
+            {
+                <div class="item active">
+                    <img class="AdCarouselImages" src="~/images/gallerien/@di?.Name/@di.GetFiles().First()?.Name">
+                </div>
+
+                @foreach (FileInfo fi in di.GetFiles().Skip(1))
+                {
+                    <div class="item">
+                        <img class="AdCarouselImages" src="~/images/gallerien/@di?.Name/@fi?.Name">
+                    </div>
+                }
+            }
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#GalleryCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#GalleryCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <a asp-action="Gallerien" asp-route-id=""><button class="btn btn-default">Zurück</button></a>
+}
+

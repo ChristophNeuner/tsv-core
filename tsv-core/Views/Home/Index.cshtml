@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutHomeIndex";
+}
+
+<div id="Home-Index-text-header">
+    <span>
+        TSV 1947 Ebensfeld e.V.  
+    </span>
+</div>
+
+<div class="bgimg1"></div>
+
+<div id="indexTextHeader">
+        Herzlich willkommen auf  der Website des TSV 1947 Ebensfeld. <br />
+        Mit über 800 Mitgliedern sind wir einer der größten Vereine unserer Marktgemeinde.
+        Als  breit aufgestellter lokaler Sportverein bieten wir von Fußball über Tennis,
+        Leichtathletik und Volleyball bis hin zu Damengymnastik und Vater-Mutter-Kind Turnen ein breites Spektrum von Sportarten an.          
+</div>
+
+
+<div class="bgimg2"></div>
+
+<div class="index-container">
+    <h1 style="text-decoration:underline;">Aktuelles</h1>
+    <br />
+    <br />
+
+    @*<h3 style="text-decoration:underline;">Einladung zur Mitgliederversammlung des TSV Ebensfeld 1947 e. V.</h3>
+    <br />
+    Am Freitag, den 10.05.2019 findet die ordentliche Mitgliederversammlung 2019 des<br />
+    TSV Ebensfeld um 19:00 Uhr im Sportheim statt. Dazu ergeht hiermit herzliche Einladung an alle Mitglieder des TSV Ebensfeld.
+    <br />
+    Tagesordnung:
+    <br />
+    1.	Begrüßung, Feststellung der Beschlussfähigkeit, Genehmigung der Tagesordnung<br />
+    2.	Berichte des Vorsitzenden, der Abteilungsleiter, der Schatzmeisterin und der Kassenprüfer<br />
+    3.	Entlastung der Vorstandschaft<br />
+    4.	Genehmigung des Protokolls zur Mitgliederversammlung 2018<br />
+    5.	Neuwahlen<br />
+    6.	Sonstiges zum Vereinsgeschehen<br />
+    <br />
+    <br />
+    Norbert Böhmer, 1. Vorsitzender	<br />				
+    Armin Häublein, 2. Vorsitzender
+
+    <br />
+    <br />
+    <br />
+    <hr />*@
+
+    <a href="https://www.fussballferien.de"><img class="img-responsive" src="~/images/Banner.jpg" /></a>
+    <br />
+    <hr />
+    <br />
+    <p><h3>Volleyball:</h3></p>
+    <p><strong><a asp-controller="Home" asp-action="Volleyball">Mitspieler/-innen für Freizeit-Mix gesucht! Weitere Infos unter Abteilung Volleyball.</a></strong></p>
+    <hr />
+</div>
+
+<div class="bgimg3"></div>
+
+<div class="index-container">
+    <h3><strong><a asp-action="Begegnungen">Spieltermine und Ergebnisse aller Fußballmannschaften des TSV: (klick für längeren Zeitraum)</a></strong></h3>
+    <br />
+    <br />
+    <script type='text/javascript'>
+        (function () {
+            var useSSL = 'https:' === document.location.protocol;
+            var src = (useSSL ? 'https:' : 'http:') + '//www.bfv.de/widget/widgetresource/widgetjs';
+            document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+        })();
+    </script>
+
+    <div id="bfv1534926416872">Konnte nicht geladen werden.</div>
+
+    <script>
+        var width = window.innerWidth;
+
+        if (width < 768) {
+            BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNJVO000017VV0AG08LVUPGND5I", "bfv1534926416872",
+            {
+                height: "400", width: "300", selectedTab: BFVWidget.HTML5.vereinTabs.spiele,
+                colorResults: "rgb(14,14,0)", colorNav: "rgb(17,17,1)", colorClubName: "rgb(13,13,0)", backgroundNav: "rgb(241,241,6)"
+            });
+
+        }
+
+        else if (width >= 768 && width < 1200) {
+            BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNJVO000017VV0AG08LVUPGND5I", "bfv1534926416872",
+            {
+                height: "600", width: "1000", selectedTab: BFVWidget.HTML5.vereinTabs.spiele,
+                colorResults: "rgb(14,14,0)", colorNav: "rgb(17,17,1)", colorClubName: "rgb(13,13,0)", backgroundNav: "rgb(241,241,6)"
+            });
+
+        }
+
+        else {
+            BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNJVO000017VV0AG08LVUPGND5I", "bfv1534926416872",
+                        {
+                            height: "700", width: "1400", selectedTab: BFVWidget.HTML5.vereinTabs.spiele,
+                            colorResults: "rgb(14,14,0)", colorNav: "rgb(17,17,1)", colorClubName: "rgb(13,13,0)", backgroundNav: "rgb(241,241,6)"
+                        });
+        }
+    </script>
+</div>
+
+<div class="bgimg4"></div>
+
+

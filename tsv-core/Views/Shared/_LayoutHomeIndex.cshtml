@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+    @Html.Partial("headPartialView")
+<body>
+    @Html.Partial("headerPartialView")
+
+    <main>
+        <div class="text-center">
+                @RenderBody()             
+        </div>
+    </main>
+
+    @Html.Partial("footerPartialView")
+
+</body>
+</html>
+

@@ -1,0 +1,291 @@
+﻿/*general*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+}
+
+header {
+    margin: 0 0 0 0;
+}
+
+main {
+    margin-top: 0;
+    
+    /*alte hintergrundfarbe*/
+    /*background-color: #fff98c;
+    /*background-color: rgba(255, 249, 140, 0.8);*/
+
+    /*hintergrundfarbe bvb*/
+    background-color: rgb(255,231,1);
+    background-color: rgba(255,231,1,0.8);
+
+    position: relative;
+    height: auto;
+    min-height: 100%;
+}
+
+#mainAllButIndex{
+    padding: 5% 3%;
+}
+
+ul > li > ul > li {
+    margin: 5px 0;
+}
+
+/*drag & drop images*/
+#dropzone {
+            text-align: center;
+            border-style: dashed;
+            font-size: 35pt;
+            min-height: 200px;
+            line-height: 200px;
+            margin-bottom: 50px;
+        }
+
+/*vereinsshop*/
+#Spreadshop {
+    margin: auto;
+    display: block;
+    height: 1800px;
+    width: 100%;
+}
+
+#impressum-link {
+    margin: 0 2%;
+}
+
+#routenplaner {
+    width: 100%;
+    height: 700px;
+}
+
+#indexTextHeader {
+    margin: 4% 2%;
+    font-size: 35px;
+    border-radius: 25px;
+    border: 3px solid black;
+    min-height: 600px;
+    padding: 10% 5%;
+}
+
+#vereinschronik {
+    font-weight: bold;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+/*logging table*/
+.logging-table {
+    table-layout: fixed;
+    width: 100%;
+}
+.log-uri {
+    width: 85%;
+    overflow: hidden;
+}
+.log-count{
+    width:15%;
+}
+
+.galleryPreviewImageContainer {
+    display: inline-block;
+    min-height: 100px;
+    min-width: 130px;
+    background-color: transparent;
+    border: none;
+}
+
+/*.galleryPreviewImageContainer:hover .galleryPreviewImages{
+    width: 120px;
+    height: 120px;
+}*/
+
+.galleryPreviewImageContainer:hover .galleryPreviewImage1{
+    left: 10px;
+}
+.galleryPreviewImageContainer:hover .galleryPreviewImage3{
+    right: 10px;
+}
+
+.galleryPreviewImage1, .galleryPreviewImage2, .galleryPreviewImage3{
+    width: 100px;
+    height: 100px;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.galleryPreviewImage1{
+    position:relative;
+    left:120px;
+    z-index: 3;
+}
+.galleryPreviewImage2{
+    position:relative;
+    z-index: 2;
+}
+.galleryPreviewImage3{
+    position: relative;
+    right:120px;
+}
+
+.index-container{
+    padding: 3%;
+}
+
+/*Carousels*/
+/*.AdCarouselImages {}*/
+
+/*#AdCarousel {}*/
+
+
+/*sticky footer*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 5px 0;
+}
+
+/*navbar*/
+/*submenues in dropdown*/
+.dropdown-submenu {
+    position: relative;
+    cursor: pointer;
+}
+
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px 6px;
+        border-radius: 0 6px 6px 6px;
+        display: none;
+    }
+    /*.dropdown-submenu:hover>.dropdown-menu {
+    display:block;
+}*/
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #cccccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover > a:after {
+        border-left-color: #ffffff;
+    }
+
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+        }
+
+
+/*big screens only*/
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    #bodyAllButIndex{
+        background-image: url("../images/fussball/rasen.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /*parralax*/
+    .bgimg1, .bgimg2, .bgimg3, .bgimg4 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .bgimg1 {
+        background-image: url("../images/fussball/1_Mannschaft2018_19.png");
+        min-height: 900px;
+    }
+
+    .bgimg2 {
+        /*background-image: url("../images/fussball/2.Mannschaft_org2016.JPG");*/
+        background-image: url("../images/fussball/damen_1718_trainer_zugeschnitten.jpg");
+        min-height: 600px;
+    }
+
+    .bgimg3 {
+        background-image: url("../images/stadion/sportheim-aussen-2018.png");
+        min-height: 600px;
+    }
+
+    .bgimg4 {
+        background-image: url("../images/stadion/rasen-box.png");
+        /*background-image: url("../images/fussball/rasen.jpg");*/
+        min-height: 500px;
+    }
+
+    #Home-Index-text-header {
+        width: 100%;
+        background-color: transparent;
+        font-size: 25px;
+        font-weight: bold;
+        position: absolute;
+        top: 3%;
+        text-align: center;
+    }
+
+        #Home-Index-text-header>span {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+            opacity: 0.8;
+        }
+}
+
+/*small screens only*/
+@media (max-width: 767px) {
+    /*.HeaderCarouselImages {
+        width: 100% !important;
+        height: 250px !important;
+    }*/
+    #mainAllButIndex, main{
+        padding: 20% 3%;
+    }
+
+    #Home-Index-text-header{
+        display: none;
+    }
+
+    #indexTextHeader{
+        font-size: 20px;
+        min-height: 0;
+    }
+}
