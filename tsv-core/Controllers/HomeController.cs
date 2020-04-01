@@ -14,7 +14,7 @@ namespace tsv_core.Controllers
         //}
 
         //[HttpPost]
-        public ViewResult Gallerien(string galleryName)
+        public ViewResult Galerien(string galleryName)
         {
             if (!string.IsNullOrEmpty(galleryName) && Gallery.Galleries.Where(di => di.Name == galleryName).ToList().Count() != 0)
             {
