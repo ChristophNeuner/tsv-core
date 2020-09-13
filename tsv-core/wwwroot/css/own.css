@@ -229,18 +229,21 @@ ul > li > ul > li {
     }
 
     .bgimg1 {
-        background-image: url("../images/fussball/1mannschaft2019.jpeg");
+        /*background-image: url("../images/fussball/1mannschaft2019.jpeg");*/
+        background-image: url("../images/stadion/sportheim-aussen-2018.png");
         min-height: 900px;
     }
 
     .bgimg2 {
         /*background-image: url("../images/fussball/2.Mannschaft_org2016.JPG");*/
-        background-image: url("../images/fussball/damen_1718_trainer_zugeschnitten.jpg");
+        /*background-image: url("../images/fussball/damen_1718_trainer_zugeschnitten.jpg");*/
+        background-image: url("../images/stadion/rasen-box.png");
         min-height: 600px;
     }
 
     .bgimg3 {
-        background-image: url("../images/stadion/sportheim-aussen-2018.png");
+        /*background-image: url("../images/stadion/sportheim-aussen-2018.png");*/
+        background-image: url("../images/stadion/rasen-box.png");
         min-height: 600px;
     }
 

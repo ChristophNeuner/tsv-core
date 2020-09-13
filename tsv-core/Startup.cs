@@ -26,12 +26,17 @@ namespace tsv_core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // comment out to run locally (since db is only accessible from the server)
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["Data:tsvIdentity:ConnectionString"]));
             services.AddDbContext<AppIdentityDbContext>(options => options.UseMySql(Configuration["Data:tsvIdentity:ConnectionString"]));
             services.AddDbContext<LoggingDbContext>(options => options.UseMySql(Configuration["Data:tsvRequestLogging:ConnectionString"]));
             services.AddIdentity<AppUser, IdentityRole>(opts => opts.User.RequireUniqueEmail = true).AddEntityFrameworkStores<AppIdentityDbContext>();
             services.AddScoped<EFCDatabaseRequestLogger>();
             services.AddSingleton<DBInformation>();
+            //
+
+
+
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();
@@ -62,8 +67,10 @@ namespace tsv_core
 
             //This position of the LoggingMiddleware is important!! If it would be placed before "app.UseStaticFiles();" the request paths to the static files would be logged too.
             //If it would be placed behind app.UseMvc, it wouldn't log anything at all.            
-            app.UseMiddleware<LoggingMiddleware>();
 
+            // comment out to run locally (since db is only accessible from the server)
+            app.UseMiddleware<LoggingMiddleware>();
+            //
 
             app.UseMvc(routes =>
             {
